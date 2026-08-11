@@ -13,14 +13,14 @@ export function SectionHeading({
     <div
       className={`max-w-3xl ${align === "center" ? "mx-auto text-center" : ""}`}
     >
-      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-forest-300">
+      <p className="text-sm font-semibold uppercase tracking-[0.14em] text-forest-600">
         {eyebrow}
       </p>
-      <h2 className="mt-3 font-display text-3xl font-semibold text-balance text-forest-100 sm:text-4xl">
+      <h2 className="mt-3 font-display text-3xl font-semibold text-balance text-ink sm:text-4xl">
         {title}
       </h2>
       {description ? (
-        <p className="mt-4 text-lg leading-relaxed text-mist">
+        <p className="mt-4 text-lg leading-relaxed text-muted">
           {description}
         </p>
       ) : null}
