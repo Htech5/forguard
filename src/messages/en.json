@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "title": "ForGuard — Autonomous Drone Guarding Conservation Forests",
+    "description": "ForGuard is a multi-parameter autonomous drone system integrated with a PV-PCM charging station, built to detect illegal activity in conservation forests sustainably."
+  },
+  "nav": {
+    "brand": "ForGuard",
+    "links": {
+      "problem": "Problem",
+      "solution": "Solution",
+      "howItWorks": "How It Works",
+      "detection": "Detection Tech",
+      "charging": "Charging Station",
+      "gallery": "Gallery",
+      "roadmap": "Roadmap",
+      "team": "Team"
+    },
+    "cta": "Download Paper"
+  },
+  "loading": {
+    "brand": "ForGuard",
+    "tagline": "Flying through the forest canopy…"
+  },
+  "hero": {
+    "eyebrow": "Autonomous Drone × Multi-Parameter Sensing × PV-PCM Charging",
+    "title": "Guarding conservation forests, tirelessly, around the clock.",
+    "subtitle": "ForGuard is an autonomous drone combining computer vision, acoustic detection, and a chemical sniffer to spot illegal activity early — backed by a self-sustaining solar PV-PCM charging station.",
+    "ctaPrimary": "Download Full Paper",
+    "ctaSecondary": "See How It Works",
+    "scrollHint": "Scroll to explore"
+  },
+  "problem": {
+    "eyebrow": "A Crisis Beneath the Canopy",
+    "title": "Indonesia's conservation forests are losing their guardians",
+    "description": "Illegal logging, poaching, and wildlife trade keep eroding conservation areas — while ground patrols, watchtowers, and satellite imagery can no longer keep pace with vast, cloud-covered tropical terrain.",
+    "stats": [
+      { "value": "1M+", "unit": "ha", "label": "Peak primary forest loss recorded in 2016" },
+      { "value": "257,384", "unit": "ha", "label": "National deforestation in 2023" },
+      { "value": "12,612", "unit": "ha", "label": "Occurred within 142 critical conservation areas" },
+      { "value": "35–65", "unit": "cases/yr", "label": "Poaching & wildlife trade cases (2018–2022)" }
+    ],
+    "source": "Source: Global Forest Watch, Auriga Nusantara, Ministry of Environment and Forestry, Goodstats.id — cited in the ForGuard research paper"
+  },
+  "solution": {
+    "eyebrow": "The Solution",
+    "title": "Three technology pillars of ForGuard",
+    "description": "ForGuard fuses electronic eyes, ears, and a nose into a single autonomous drone that never runs out of power.",
+    "pillars": [
+      {
+        "title": "Autonomous Drone",
+        "description": "Flies, maps, and lands on its own with intelligent path planning — minimizing operator intervention across hard-to-reach forest terrain."
+      },
+      {
+        "title": "Multi-Parameter Detection",
+        "description": "Cross-verified visual (YOLOv8), acoustic (MFCC + ML), and chemical (CO sniffer) signals reduce false alarms and raise detection reliability."
+      },
+      {
+        "title": "PV-PCM Charging Station",
+        "description": "An automatic solar charging station using Phase Change Material — the drone flies continuously with no cables and no operator."
+      }
+    ]
+  },
+  "howItWorks": {
+    "eyebrow": "System Flow",
+    "title": "From patrol to follow-up, in one continuous loop",
+    "description": "Following ForGuard's full operating mechanism (Appendix 3 of the paper): the drone patrols, detects, reports, then returns to charge itself.",
+    "steps": [
+      { "title": "Patrol the Forest Area", "description": "The autonomous drone follows a scheduled route over the conservation area using 3D Jump Point Search path planning." },
+      { "title": "Multi-Parameter Detection", "description": "ICR camera + YOLOv8, an MFCC-based microphone, and a CO chemical sniffer scan simultaneously for signs of illegal activity." },
+      { "title": "Analysis & Verification", "description": "Signals across all three parameters are cross-checked to suppress false positives before an alert is sent." },
+      { "title": "Alert Sent to Rangers", "description": "Data streams in real time via LoRa to the monitoring app — rangers can verify camera and audio evidence and act on it." },
+      { "title": "Autonomous Landing & Charging", "description": "When battery is low, the drone lands itself on the PV-PCM charging pad and recharges before resuming patrol." }
+    ]
+  },
+  "detection": {
+    "eyebrow": "Detection Technology",
+    "title": "Three electronic senses, one reliable decision",
+    "description": "Each parameter reinforces the others — reducing reliance on any single sensor type in a dynamic forest environment.",
+    "tabs": [
+      {
+        "name": "Visual",
+        "title": "Computer Vision — YOLOv8",
+        "description": "An Infrared Cut Filter Removable (ICR) camera enables 24-hour monitoring. YOLOv8 detects humans and weapons in real time, while 1D Synthetic Aperture imaging cuts processing complexity by up to 1/10th compared to 2D methods.",
+        "stats": [
+          { "value": "96.1%", "label": "Human detection mAP" },
+          { "value": "92.7%", "label": "Weapon detection accuracy" },
+          { "value": "92–93%", "label": "1D SA imaging accuracy" }
+        ]
+      },
+      {
+        "name": "Audio",
+        "title": "Acoustic Early Warning — MFCC",
+        "description": "An onboard microphone captures the impulsive signature of gunshots and chainsaw noise. Mel-Frequency Cepstral Coefficients (MFCC) extraction separates genuine gunshots from other impulsive sounds like firecrackers.",
+        "stats": [
+          { "value": "Real-time", "label": "Acoustic event classification" },
+          { "value": "MFCC", "label": "Human-perception-based feature extraction" }
+        ]
+      },
+      {
+        "name": "Chemical",
+        "title": "Chemical Sniffer — CO Residue",
+        "description": "A three-electrode electrochemical CO sensor detects gunpowder combustion residue in the air, reinforcing the validity of suspected illegal activity when combined with visual and acoustic detection.",
+        "stats": [
+          { "value": "0–1000 ppm", "label": "CO detection range" },
+          { "value": "≤60 seconds", "label": "T90 response time" },
+          { "value": "±5% FS", "label": "Maximum error" }
+        ]
+      }
+    ]
+  },
+  "charging": {
+    "eyebrow": "Sustainable Energy",
+    "title": "An autonomous PV-PCM powered charging station",
+    "description": "Battery limits are no longer a bottleneck. ForGuard lands itself, recharges itself, and resumes patrol — powered by solar panels with Phase Change Material technology that keeps panel temperature stable in tropical climates.",
+    "features": [
+      { "title": "Autonomous Landing", "description": "A modular 60×60 cm, orientation-independent charging pad — the drone doesn't need to land with precision." },
+      { "title": "Smart Relay Correction", "description": "The microcontroller automatically flips power line polarity if initial charging fails, guaranteeing up to 100% reliability." },
+      { "title": "MPPT Perturb & Observe", "description": "An MPPT algorithm stabilizes solar panel output toward a consistent 12V / 3A reference voltage." }
+    ],
+    "stats": [
+      { "value": "2,126.29 W", "label": "Total PV-PCM output (clear weather)" },
+      { "value": "+38.3%", "label": "Higher than a standard PV panel" },
+      { "value": ">20°C", "label": "Panel temperature drop at peak conditions" }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "Product Design",
+    "title": "ForGuard 3D Design",
+    "description": "Concept renders of the drone and charging station, engineered for long-term autonomous operation in tropical forest environments."
+  },
+  "appPreview": {
+    "eyebrow": "Ranger App",
+    "title": "One app, full operational control",
+    "description": "Rangers and operators monitor drone status, multi-parameter detection results, and charging station health in real time — complete with detection history and remote emergency controls."
+  },
+  "roadmap": {
+    "eyebrow": "Roadmap",
+    "title": "From lab research to a nationwide monitoring network",
+    "description": "ForGuard's development follows four stages, from lab-scale technical validation to integration with the Ministry of Environment and Forestry's Sipongi command center.",
+    "stages": [
+      { "period": "2026 · H1", "title": "Research & Prototyping", "description": "AI algorithm development, sniffer sensor integration, and lab testing of PV-PCM efficiency. Target: TRL 4." },
+      { "period": "2026 · H2", "title": "Limited Field Trial", "description": "Deployment in an educational forest / campus area with forest-like topography (1–2 hectares) to validate weather resilience." },
+      { "period": "2027", "title": "Pilot Project", "description": "Partnership with a National Park authority for patrol coverage of one high-risk forest resort sector." },
+      { "period": "2028 onward", "title": "Scaling & Integration", "description": "Mass production of charging stations and data integration with the Ministry's Sipongi command center across priority national parks." }
+    ]
+  },
+  "team": {
+    "eyebrow": "Development Team",
+    "title": "Team Burpunice",
+    "description": "Developed by engineering students at Universitas Diponegoro, Semarang, Indonesia.",
+    "members": [
+      { "name": "Habib Mukhlis Triatmojo", "role": "Student ID 21120124130081" },
+      { "name": "Aqyal Ghana Zein", "role": "Student ID 21060124130088" },
+      { "name": "Muhammad Faris Revansyah", "role": "Student ID 21120124130103" }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Learn More",
+    "title": "Read the full research behind ForGuard",
+    "description": "The complete methodology, technical calculations, and feasibility analysis are available in the research paper.",
+    "downloadLabel": "Download Paper (PDF)",
+    "contactLabel": "Contact the Team"
+  },
+  "footer": {
+    "tagline": "An autonomous drone system for conservation forest surveillance.",
+    "rights": "Team Burpunice — Universitas Diponegoro.",
+    "sourceNote": "All technical data and claims reference the ForGuard research paper, 2026."
+  },
+  "langSwitcher": {
+    "id": "ID",
+    "en": "EN"
+  }
+}
