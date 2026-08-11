@@ -7,7 +7,7 @@ export async function Roadmap() {
   const stages = t.raw("stages") as { period: string; title: string; description: string }[];
 
   return (
-    <section id="roadmap" className="relative bg-forest-900/40 py-24">
+    <section id="roadmap" className="relative bg-forest-50 py-24">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <SectionHeading eyebrow={t("eyebrow")} title={t("title")} description={t("description")} />
@@ -16,14 +16,14 @@ export async function Roadmap() {
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {stages.map((stage, i) => (
             <Reveal key={stage.title} delay={i * 0.08}>
-              <div className="flex h-full flex-col rounded-2xl border border-forest-800 bg-forest-950/60 p-6">
-                <span className="text-xs font-semibold uppercase tracking-wider text-forest-300">
+              <div className="flex h-full flex-col rounded-2xl border border-line bg-surface p-6 shadow-sm">
+                <span className="text-xs font-semibold uppercase tracking-wider text-forest-600">
                   {stage.period}
                 </span>
-                <h3 className="mt-3 font-display text-lg font-semibold text-forest-100">
+                <h3 className="mt-3 font-display text-lg font-semibold text-ink">
                   {stage.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-mist">
+                <p className="mt-2 text-sm leading-relaxed text-muted">
                   {stage.description}
                 </p>
               </div>
