@@ -22,7 +22,7 @@ export async function Gallery() {
   const t = await getTranslations("gallery");
 
   return (
-    <section id="galeri" className="relative bg-forest-900/40 py-24">
+    <section id="galeri" className="relative bg-forest-50 py-24">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <SectionHeading
@@ -36,7 +36,7 @@ export async function Gallery() {
         <div className="mt-14 columns-2 gap-4 sm:columns-3 lg:columns-4 [&>*]:mb-4">
           {IMAGES.map((src, i) => (
             <Reveal key={src} delay={(i % 4) * 0.06}>
-              <div className="overflow-hidden rounded-xl border border-forest-800">
+              <div className="overflow-hidden rounded-xl border border-line bg-surface shadow-sm">
                 <Image
                   src={src}
                   alt="ForGuard drone render"
