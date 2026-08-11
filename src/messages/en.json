@@ -132,7 +132,8 @@
   "appPreview": {
     "eyebrow": "Ranger App",
     "title": "One app, full operational control",
-    "description": "Rangers and operators monitor drone status, multi-parameter detection results, and charging station health in real time — complete with detection history and remote emergency controls."
+    "description": "Rangers and operators monitor drone status, multi-parameter detection results, and charging station health in real time — complete with detection history and remote emergency controls.",
+    "hint": "Tap any screen to bring it to the front."
   },
   "roadmap": {
     "eyebrow": "Roadmap",

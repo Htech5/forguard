@@ -6,10 +6,11 @@ import { ArrowRight, Download, ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "@/lib/gsap";
+import { ForestTreeline } from "./ForestTreeline";
 
 // Swap this for a ForGuard mobile app screenshot once it's ready — the
 // framed showcase below is sized for either a drone render or an app UI.
-const SHOWCASE_IMAGE = "/img/Drone 1.jpg";
+const SHOWCASE_IMAGE = "/img/drone-1-nobg.webp";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -56,11 +57,11 @@ export function Hero() {
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 [background-image:linear-gradient(to_right,var(--line)_1px,transparent_1px),linear-gradient(to_bottom,var(--line)_1px,transparent_1px)] [background-size:64px_64px] opacity-40"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,var(--line)_1px,transparent_1px),linear-gradient(to_bottom,var(--line)_1px,transparent_1px)] bg-size-[64px_64px] opacity-40"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-0 h-full [background:radial-gradient(120%_60%_at_50%_0%,transparent_0%,var(--forest-50)_75%)]"
+        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-full [background:radial-gradient(120%_60%_at_50%_0%,transparent_0%,var(--forest-50)_75%)]"
       />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 pb-20 pt-28 md:pt-36">
@@ -129,10 +130,12 @@ export function Hero() {
           </div>
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-x-0 -bottom-1 h-24 bg-gradient-to-b from-transparent to-forest-50"
+            className="pointer-events-none absolute inset-x-0 -bottom-1 h-24 bg-linear-to-b from-transparent to-forest-50"
           />
         </div>
       </div>
+
+      <ForestTreeline className="pointer-events-none absolute inset-x-0 bottom-0 h-14 w-full opacity-80 sm:h-20" />
     </section>
   );
 }

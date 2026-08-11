@@ -4,18 +4,18 @@ import { SectionHeading } from "./SectionHeading";
 import { Reveal } from "./Reveal";
 
 const IMAGES = [
-  "/img/Isometric 1.JPG",
-  "/img/Isometric 2.JPG",
-  "/img/Drone 3.JPG",
-  "/img/Drone 4.JPG",
-  "/img/Samping.JPG",
-  "/img/Dalam.JPG",
-  "/img/Drone 5.JPG",
-  "/img/Drone 6.JPG",
-  "/img/Isometric 3.JPG",
-  "/img/Dalam 2.JPG",
-  "/img/Drone 2.JPG",
-  "/img/Isometric 4.JPG",
+  "/img/isometric-1.webp",
+  "/img/isometric-2.webp",
+  "/img/drone-3.webp",
+  "/img/drone-4.webp",
+  "/img/samping.webp",
+  "/img/dalam.webp",
+  "/img/drone-5.webp",
+  "/img/drone-6.webp",
+  "/img/isometric-3.webp",
+  "/img/dalam-2.webp",
+  "/img/drone-2.webp",
+  "/img/isometric-4.webp",
 ];
 
 export async function Gallery() {

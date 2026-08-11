@@ -132,7 +132,8 @@
   "appPreview": {
     "eyebrow": "Aplikasi Pengawas",
     "title": "Satu aplikasi, seluruh kendali operasional",
-    "description": "Pengawas dan operator memantau kondisi drone, hasil deteksi multi-parameter, serta status charging station secara real-time — lengkap dengan riwayat deteksi dan kendali darurat jarak jauh."
+    "description": "Pengawas dan operator memantau kondisi drone, hasil deteksi multi-parameter, serta status charging station secara real-time — lengkap dengan riwayat deteksi dan kendali darurat jarak jauh.",
+    "hint": "Ketuk salah satu tampilan untuk melihat layar lainnya."
   },
   "roadmap": {
     "eyebrow": "Peta Jalan",

@@ -26,7 +26,7 @@ export default async function Home({
     <>
       <LoadingScreenGate />
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-1 pb-24 xl:pb-0">
         <Hero />
         <ProblemStats />
         <SolutionOverview />

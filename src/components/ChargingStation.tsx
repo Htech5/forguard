@@ -50,13 +50,12 @@ export async function ChargingStation() {
 
           <div>
             <Reveal delay={0.15}>
-              <div className="overflow-hidden rounded-2xl border border-line shadow-sm">
+              <div className="relative aspect-4/3 overflow-hidden rounded-2xl border border-line bg-forest-50 shadow-sm">
                 <Image
-                  src="/img/Drone 1.JPG"
+                  src="/img/drone-1-nobg.webp"
                   alt="ForGuard drone docked at PV-PCM charging station"
-                  width={900}
-                  height={700}
-                  className="h-full w-full object-cover"
+                  fill
+                  className="object-contain p-6"
                 />
               </div>
             </Reveal>
