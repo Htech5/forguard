@@ -2,58 +2,47 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download, ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "@/lib/gsap";
 
+// Swap this for a ForGuard mobile app screenshot once it's ready — the
+// framed showcase below is sized for either a drone render or an app UI.
+const SHOWCASE_IMAGE = "/img/Drone 1.jpg";
+
 export function Hero() {
   const t = useTranslations("hero");
   const sectionRef = useRef<HTMLDivElement>(null);
-  const droneRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const badgeRef = useRef<HTMLAnchorElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+  const showcaseRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
-      if (!sectionRef.current || !droneRef.current || !contentRef.current)
-        return;
+      const targets = [
+        badgeRef.current,
+        headingRef.current,
+        subtitleRef.current,
+        ctaRef.current,
+      ].filter(Boolean);
 
-      gsap.to(droneRef.current, {
-        x: "12vw",
-        y: "-8vh",
-        rotate: 6,
-        scale: 0.85,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: 0.6,
-        },
-      });
+      gsap.set(targets, { opacity: 0, y: 16 });
+      gsap.set(showcaseRef.current, { opacity: 0, y: 32 });
 
-      gsap.to(contentRef.current, {
-        opacity: 0,
-        y: -30,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "65% top",
-          scrub: 0.6,
-        },
-      });
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      gsap.fromTo(
-        droneRef.current,
-        { y: "-1%" },
-        {
-          y: "1.5%",
-          duration: 3.2,
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-        }
+      tl.to(targets, {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        stagger: 0.12,
+      }).to(
+        showcaseRef.current,
+        { opacity: 1, y: 0, duration: 0.9 },
+        "-=0.3"
       );
     },
     { scope: sectionRef }
@@ -63,49 +52,52 @@ export function Hero() {
     <section
       ref={sectionRef}
       id="hero"
-      className="relative flex min-h-[90vh] items-center overflow-hidden border-b border-line bg-forest-50"
+      className="relative overflow-hidden border-b border-line bg-forest-50"
     >
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 [background-image:linear-gradient(to_right,var(--line)_1px,transparent_1px),linear-gradient(to_bottom,var(--line)_1px,transparent_1px)] [background-size:64px_64px] opacity-40"
       />
-
       <div
-        ref={droneRef}
-        className="pointer-events-none absolute right-[4%] top-[14%] hidden w-[32vw] max-w-sm xl:block"
-        style={{
-          maskImage:
-            "radial-gradient(closest-side, black 60%, transparent 100%)",
-          WebkitMaskImage:
-            "radial-gradient(closest-side, black 60%, transparent 100%)",
-        }}
-      >
-        <Image
-          src="/img/Drone 3.JPG"
-          alt="ForGuard drone 3D render"
-          width={800}
-          height={800}
-          priority
-          className="aspect-square rounded-full border border-line object-cover shadow-xl shadow-forest-900/10"
-        />
-      </div>
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 -z-0 h-full [background:radial-gradient(120%_60%_at_50%_0%,transparent_0%,var(--forest-50)_75%)]"
+      />
 
-      <div
-        ref={contentRef}
-        className="relative z-10 mx-auto max-w-7xl px-6 py-24"
-      >
-        <div className="max-w-2xl">
-          <p className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-forest-600">
-            {t("eyebrow")}
-          </p>
-          <h1 className="mt-6 font-display text-4xl font-bold leading-[1.08] text-balance text-ink sm:text-5xl lg:text-6xl">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pb-20 pt-28 md:pt-36">
+        <div className="text-center">
+          <a
+            ref={badgeRef}
+            href="#deteksi"
+            className="group mx-auto inline-flex items-center gap-3 rounded-full border border-line bg-surface py-1 pl-4 pr-1 text-sm shadow-sm transition-colors hover:border-forest-400"
+          >
+            <span className="text-ink">{t("badge")}</span>
+            <span className="flex size-6 items-center justify-center overflow-hidden rounded-full bg-forest-100 text-forest-700">
+              <ChevronRight
+                size={14}
+                strokeWidth={2.25}
+                className="transition-transform duration-300 group-hover:translate-x-0.5"
+              />
+            </span>
+          </a>
+
+          <h1
+            ref={headingRef}
+            className="mx-auto mt-8 max-w-4xl font-display text-5xl font-bold leading-[1.08] text-balance text-ink md:text-6xl lg:text-7xl"
+          >
             {t("title")}
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
+
+          <p
+            ref={subtitleRef}
+            className="mx-auto mt-8 max-w-2xl text-balance text-lg leading-relaxed text-muted"
+          >
             {t("subtitle")}
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          <div
+            ref={ctaRef}
+            className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
+          >
             <a
               href="#unduh"
               className="inline-flex items-center gap-2 rounded-full bg-forest-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-forest-700"
@@ -121,6 +113,24 @@ export function Hero() {
               <ArrowRight size={16} strokeWidth={2.25} />
             </a>
           </div>
+        </div>
+
+        <div ref={showcaseRef} className="relative mt-16 md:mt-20">
+          <div className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl border border-line bg-surface p-3 shadow-xl shadow-forest-900/5 ring-1 ring-forest-900/5">
+            <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-forest-50">
+              <Image
+                src={SHOWCASE_IMAGE}
+                alt="ForGuard drone 3D render"
+                fill
+                priority
+                className="object-contain p-8"
+              />
+            </div>
+          </div>
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 -bottom-1 h-24 bg-gradient-to-b from-transparent to-forest-50"
+          />
         </div>
       </div>
     </section>

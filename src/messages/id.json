@@ -22,6 +22,7 @@
     "tagline": "Menerbangkan drone menembus kanopi hutan…"
   },
   "hero": {
+    "badge": "Karya Tulis Ilmiah — Universitas Diponegoro 2026",
     "eyebrow": "Autonomous Drone × Multi-Parameter Sensing × PV-PCM Charging",
     "title": "Menjaga hutan konservasi, tanpa henti, tanpa lelah.",
     "subtitle": "ForGuard adalah drone autonomus yang memadukan computer vision, deteksi akustik, dan chemical sniffer untuk mengenali aktivitas ilegal di hutan secara dini — didukung stasiun pengisian daya mandiri bertenaga surya PV-PCM.",

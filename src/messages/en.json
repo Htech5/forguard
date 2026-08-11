@@ -22,6 +22,7 @@
     "tagline": "Flying through the forest canopy…"
   },
   "hero": {
+    "badge": "Research Paper — Universitas Diponegoro 2026",
     "eyebrow": "Autonomous Drone × Multi-Parameter Sensing × PV-PCM Charging",
     "title": "Guarding conservation forests, tirelessly, around the clock.",
     "subtitle": "ForGuard is an autonomous drone combining computer vision, acoustic detection, and a chemical sniffer to spot illegal activity early — backed by a self-sustaining solar PV-PCM charging station.",
