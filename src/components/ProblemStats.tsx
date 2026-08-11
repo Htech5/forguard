@@ -7,7 +7,7 @@ export async function ProblemStats() {
   const stats = t.raw("stats") as { value: string; unit: string; label: string }[];
 
   return (
-    <section id="masalah" className="relative bg-forest-950 py-24">
+    <section id="masalah" className="relative bg-background py-24">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <SectionHeading
@@ -20,14 +20,14 @@ export async function ProblemStats() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 0.08}>
-              <div className="h-full rounded-2xl border border-forest-800 bg-forest-900/50 p-6">
+              <div className="h-full rounded-2xl border border-line bg-surface p-6 shadow-sm">
                 <p className="font-display text-3xl font-bold text-alert">
                   {stat.value}
-                  <span className="ml-1 text-base font-semibold text-forest-300">
+                  <span className="ml-1 text-base font-semibold text-forest-600">
                     {stat.unit}
                   </span>
                 </p>
-                <p className="mt-3 text-sm leading-relaxed text-mist">
+                <p className="mt-3 text-sm leading-relaxed text-muted">
                   {stat.label}
                 </p>
               </div>
@@ -35,7 +35,7 @@ export async function ProblemStats() {
           ))}
         </div>
 
-        <p className="mt-8 text-xs text-mist/70">{t("source")}</p>
+        <p className="mt-8 text-xs text-muted/80">{t("source")}</p>
       </div>
     </section>
   );
