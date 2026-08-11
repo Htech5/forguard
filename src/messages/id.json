@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "title": "ForGuard — Drone Autonomus Pengawas Hutan Konservasi",
+    "description": "ForGuard adalah sistem drone autonomus multi-parameter terintegrasi charging station PV-PCM untuk mendeteksi kegiatan ilegal di hutan konservasi secara berkelanjutan."
+  },
+  "nav": {
+    "brand": "ForGuard",
+    "links": {
+      "problem": "Masalah",
+      "solution": "Solusi",
+      "howItWorks": "Cara Kerja",
+      "detection": "Teknologi Deteksi",
+      "charging": "Charging Station",
+      "gallery": "Galeri",
+      "roadmap": "Roadmap",
+      "team": "Tim"
+    },
+    "cta": "Unduh KTI"
+  },
+  "loading": {
+    "brand": "ForGuard",
+    "tagline": "Menerbangkan drone menembus kanopi hutan…"
+  },
+  "hero": {
+    "eyebrow": "Autonomous Drone × Multi-Parameter Sensing × PV-PCM Charging",
+    "title": "Menjaga hutan konservasi, tanpa henti, tanpa lelah.",
+    "subtitle": "ForGuard adalah drone autonomus yang memadukan computer vision, deteksi akustik, dan chemical sniffer untuk mengenali aktivitas ilegal di hutan secara dini — didukung stasiun pengisian daya mandiri bertenaga surya PV-PCM.",
+    "ctaPrimary": "Unduh KTI Lengkap",
+    "ctaSecondary": "Lihat Cara Kerja",
+    "scrollHint": "Gulir untuk menjelajah"
+  },
+  "problem": {
+    "eyebrow": "Krisis di Balik Kanopi",
+    "title": "Hutan konservasi Indonesia kehilangan pelindungnya",
+    "description": "Penebangan liar, perburuan, dan perdagangan satwa terus mengikis kawasan konservasi — sementara patroli darat, watchtower, dan citra satelit tidak lagi cukup menjangkau medan hutan tropis yang luas dan tertutup awan.",
+    "stats": [
+      { "value": "1 Juta+", "unit": "ha", "label": "Kehilangan hutan primer pada puncaknya di tahun 2016" },
+      { "value": "257.384", "unit": "ha", "label": "Deforestasi nasional pada tahun 2023" },
+      { "value": "12.612", "unit": "ha", "label": "Terjadi di 142 kawasan konservasi krusial" },
+      { "value": "35–65", "unit": "kasus/th", "label": "Perburuan & perdagangan satwa liar (2018–2022)" }
+    ],
+    "source": "Sumber: Global Forest Watch, Auriga Nusantara, Kementerian LHK, Goodstats.id — dikutip dalam KTI ForGuard"
+  },
+  "solution": {
+    "eyebrow": "Solusi",
+    "title": "Tiga pilar teknologi ForGuard",
+    "description": "ForGuard menggabungkan mata, telinga, dan hidung elektronik ke dalam satu drone otonom yang tak pernah kehabisan tenaga.",
+    "pillars": [
+      {
+        "title": "Autonomous Drone",
+        "description": "Terbang, memetakan, dan mendarat sendiri dengan perencanaan jalur cerdas — meminimalkan intervensi operator di medan hutan yang sulit dijangkau."
+      },
+      {
+        "title": "Multi-Parameter Detection",
+        "description": "Verifikasi silang visual (YOLOv8), audio (MFCC + ML), dan kimia (chemical sniffer CO) menekan alarm palsu dan meningkatkan keandalan deteksi."
+      },
+      {
+        "title": "Charging Station PV-PCM",
+        "description": "Stasiun pengisian daya otomatis bertenaga surya dengan Phase Change Material — drone terbang berkelanjutan tanpa kabel, tanpa operator."
+      }
+    ]
+  },
+  "howItWorks": {
+    "eyebrow": "Alur Sistem",
+    "title": "Dari patroli hingga tindak lanjut, dalam satu alur",
+    "description": "Mengikuti alur mekanisme kerja penuh ForGuard (Lampiran 3, KTI): drone berpatroli, mendeteksi, mengirim data, hingga kembali mengisi daya sendiri.",
+    "steps": [
+      { "title": "Patroli Area Hutan", "description": "Drone autonomus menyusuri rute terjadwal di atas kawasan konservasi menggunakan perencanaan jalur 3D Jump Point Search." },
+      { "title": "Deteksi Multi-Parameter", "description": "Kamera ICR + YOLOv8, mikrofon dengan ekstraksi MFCC, dan chemical sniffer CO bekerja simultan memindai tanda-tanda aktivitas ilegal." },
+      { "title": "Analisis & Verifikasi", "description": "Sinyal dari ketiga parameter disilangkan untuk menekan false positive sebelum peringatan dikirim." },
+      { "title": "Kirim Peringatan ke Pengawas", "description": "Data dikirim real-time via LoRa ke aplikasi monitoring — pengawas dapat memverifikasi bukti kamera & suara dan menindaklanjuti." },
+      { "title": "Landing & Charging Otomatis", "description": "Saat baterai menipis, drone kembali mendarat di charging pad PV-PCM dan mengisi daya secara mandiri sebelum kembali berpatroli." }
+    ]
+  },
+  "detection": {
+    "eyebrow": "Teknologi Deteksi",
+    "title": "Tiga indera elektronik, satu keputusan yang andal",
+    "description": "Setiap parameter saling menguatkan — mengurangi ketergantungan pada satu jenis sensor saja di lingkungan hutan yang dinamis.",
+    "tabs": [
+      {
+        "name": "Visual",
+        "title": "Computer Vision — YOLOv8",
+        "description": "Kamera Infrared Cut Filter Removable (ICR) memungkinkan pemantauan 24 jam. Model YOLOv8 mendeteksi manusia dan senjata secara real-time, dengan pencitraan 1D Synthetic Aperture yang memangkas kompleksitas pemrosesan hingga 1/10 dibanding metode 2D.",
+        "stats": [
+          { "value": "96,1%", "label": "mAP deteksi manusia" },
+          { "value": "92,7%", "label": "Akurasi deteksi senjata" },
+          { "value": "92–93%", "label": "Akurasi pencitraan 1D SA" }
+        ]
+      },
+      {
+        "name": "Audio",
+        "title": "Acoustic Early Warning — MFCC",
+        "description": "Mikrofon terintegrasi menangkap pola impulsif suara tembakan dan gergaji mesin. Ekstraksi fitur Mel-Frequency Cepstral Coefficients (MFCC) memisahkan suara tembakan asli dari suara impulsif lain seperti petasan.",
+        "stats": [
+          { "value": "Real-time", "label": "Klasifikasi kejadian akustik" },
+          { "value": "MFCC", "label": "Ekstraksi fitur berbasis persepsi manusia" }
+        ]
+      },
+      {
+        "name": "Kimia",
+        "title": "Chemical Sniffer — Residu CO",
+        "description": "Sensor CO elektrokimia tiga elektroda mendeteksi residu pembakaran bubuk mesiu di udara, memperkuat validitas dugaan aktivitas ilegal saat dikombinasikan dengan deteksi visual dan audio.",
+        "stats": [
+          { "value": "0–1000 ppm", "label": "Rentang deteksi CO" },
+          { "value": "≤60 detik", "label": "Waktu respons T90" },
+          { "value": "±5% FS", "label": "Galat maksimum" }
+        ]
+      }
+    ]
+  },
+  "charging": {
+    "eyebrow": "Energi Berkelanjutan",
+    "title": "Charging Station otonom bertenaga PV-PCM",
+    "description": "Keterbatasan baterai bukan lagi hambatan. ForGuard mendarat sendiri, mengisi daya sendiri, dan kembali berpatroli — didukung panel surya berteknologi Phase Change Material yang menjaga suhu panel tetap stabil di iklim tropis.",
+    "features": [
+      { "title": "Landing Otonom", "description": "Charging pad modular 60×60 cm bersifat orientation-independent — drone tak perlu mendarat presisi." },
+      { "title": "Smart Relay Correction", "description": "Mikrokontroler membalik polaritas jalur daya secara otomatis jika pengisian awal gagal, menjamin reliabilitas hingga 100%." },
+      { "title": "MPPT Perturb & Observe", "description": "Algoritma MPPT menstabilkan keluaran daya panel surya menuju tegangan referensi 12V / 3A yang konsisten." }
+    ],
+    "stats": [
+      { "value": "2.126,29 W", "label": "Total daya keluaran PV-PCM (cuaca cerah)" },
+      { "value": "+38,3%", "label": "Lebih tinggi dari panel PV standar" },
+      { "value": ">20°C", "label": "Penurunan suhu panel pada kondisi puncak" }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "Rancangan Produk",
+    "title": "Desain 3D ForGuard",
+    "description": "Konsep drone dan charging station, dirancang untuk operasi otonom jangka panjang di lingkungan hutan tropis."
+  },
+  "appPreview": {
+    "eyebrow": "Aplikasi Pengawas",
+    "title": "Satu aplikasi, seluruh kendali operasional",
+    "description": "Pengawas dan operator memantau kondisi drone, hasil deteksi multi-parameter, serta status charging station secara real-time — lengkap dengan riwayat deteksi dan kendali darurat jarak jauh."
+  },
+  "roadmap": {
+    "eyebrow": "Peta Jalan",
+    "title": "Dari riset laboratorium menuju jaringan pengawasan nasional",
+    "description": "Pengembangan ForGuard mengikuti empat tahap, dari validasi teknis skala lab hingga integrasi dengan pusat komando KLHK (Sipongi).",
+    "stages": [
+      { "period": "2026 · Semester 1", "title": "Riset & Prototyping", "description": "Pengembangan algoritma AI, integrasi sensor sniffer, dan uji laboratorium efisiensi PV-PCM. Target TRL 4." },
+      { "period": "2026 · Semester 2", "title": "Uji Coba Terbatas", "description": "Implementasi di hutan pendidikan/area kampus bertopografi mirip hutan (1–2 hektar) untuk validasi ketahanan cuaca." },
+      { "period": "2027", "title": "Pilot Project", "description": "Kerja sama dengan Balai Taman Nasional untuk patroli satu sektor resort hutan rawan aktivitas ilegal." },
+      { "period": "2028 dan seterusnya", "title": "Scaling & Integrasi", "description": "Produksi massal charging station dan integrasi data dengan pusat komando KLHK (Sipongi) di taman nasional prioritas." }
+    ]
+  },
+  "team": {
+    "eyebrow": "Tim Pengembang",
+    "title": "Tim Burpunice",
+    "description": "Dikembangkan oleh mahasiswa Fakultas Teknik, Universitas Diponegoro, Semarang.",
+    "members": [
+      { "name": "Habib Mukhlis Triatmojo", "role": "NIM. 21120124130081" },
+      { "name": "Aqyal Ghana Zein", "role": "NIM. 21060124130088" },
+      { "name": "Muhammad Faris Revansyah", "role": "NIM. 21120124130103" }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Pelajari Lebih Lanjut",
+    "title": "Baca riset lengkap di balik ForGuard",
+    "description": "Seluruh metodologi, perhitungan teknis, dan analisis kelayakan tersedia dalam dokumen Karya Tulis Ilmiah.",
+    "downloadLabel": "Unduh KTI (PDF)",
+    "contactLabel": "Hubungi Tim"
+  },
+  "footer": {
+    "tagline": "Sistem pengawasan hutan konservasi berbasis drone autonomus.",
+    "rights": "Tim Burpunice — Universitas Diponegoro.",
+    "sourceNote": "Seluruh data dan klaim teknis merujuk pada KTI ForGuard, 2026."
+  },
+  "langSwitcher": {
+    "id": "ID",
+    "en": "EN"
+  }
+}
