@@ -1,26 +1,82 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7faf6;
+  --foreground: #0b1410;
+
+  --forest-950: #04120a;
+  --forest-900: #06190f;
+  --forest-800: #0a2416;
+  --forest-700: #10331f;
+  --forest-600: #17482c;
+  --forest-500: #22643c;
+  --forest-400: #2f8a52;
+  --forest-300: #4cb374;
+  --forest-200: #8fd6ab;
+  --forest-100: #d5f0e0;
+
+  --canopy: #f4c95d;
+  --alert: #e2543c;
+  --mist: #a9c4b6;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-forest-950: var(--forest-950);
+  --color-forest-900: var(--forest-900);
+  --color-forest-800: var(--forest-800);
+  --color-forest-700: var(--forest-700);
+  --color-forest-600: var(--forest-600);
+  --color-forest-500: var(--forest-500);
+  --color-forest-400: var(--forest-400);
+  --color-forest-300: var(--forest-300);
+  --color-forest-200: var(--forest-200);
+  --color-forest-100: var(--forest-100);
+
+  --color-canopy: var(--canopy);
+  --color-alert: var(--alert);
+  --color-mist: var(--mist);
+
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-space-grotesk);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--forest-950);
+  color: var(--forest-100);
+  font-family: var(--font-manrope), Arial, Helvetica, sans-serif;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.bg-noise {
+  background-image: radial-gradient(
+      circle at 20% 20%,
+      rgba(76, 179, 116, 0.12),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 60%,
+      rgba(244, 201, 93, 0.08),
+      transparent 45%
+    );
 }
