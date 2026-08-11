@@ -1,3 +1,4 @@
+import { Signal, Wifi, BatteryMedium, TriangleAlert } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { SectionHeading } from "./SectionHeading";
 import { Reveal } from "./Reveal";
@@ -6,7 +7,7 @@ export async function AppPreview() {
   const t = await getTranslations("appPreview");
 
   return (
-    <section className="relative bg-forest-950 py-24">
+    <section className="relative bg-background py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
           <Reveal>
@@ -14,40 +15,51 @@ export async function AppPreview() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <div className="mx-auto w-full max-w-xs overflow-hidden rounded-[2rem] border border-forest-700 bg-gradient-to-b from-forest-600 to-forest-800 p-4 shadow-2xl shadow-black/40">
-              <div className="rounded-2xl bg-forest-950/40 p-4">
-                <div className="flex items-center justify-between text-xs text-forest-100/80">
-                  <span>ForGuard</span>
-                  <span>●●●</span>
+            <div className="mx-auto w-full max-w-xs overflow-hidden rounded-[2rem] border border-line bg-surface p-4 shadow-xl shadow-forest-900/5">
+              <div className="rounded-2xl bg-forest-50 p-4">
+                <div className="flex items-center justify-between text-muted">
+                  <span className="text-xs font-semibold text-ink">ForGuard</span>
+                  <span className="flex items-center gap-1.5">
+                    <Signal size={13} strokeWidth={2} />
+                    <Wifi size={13} strokeWidth={2} />
+                    <BatteryMedium size={15} strokeWidth={2} />
+                  </span>
                 </div>
 
-                <div className="mt-4 rounded-xl border border-forest-500/40 bg-forest-900/60 p-4">
-                  <p className="text-[10px] uppercase tracking-wider text-forest-300">
+                <div className="mt-4 rounded-xl border border-line bg-surface p-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-forest-600">
                     Status Drone
                   </p>
-                  <p className="mt-1 text-sm font-semibold text-forest-100">
+                  <p className="mt-1 text-sm font-semibold text-ink">
                     Aktif — Wilayah A
                   </p>
-                  <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-forest-800">
-                    <div className="h-full w-[70%] rounded-full bg-forest-300" />
+                  <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-forest-100">
+                    <div className="h-full w-[70%] rounded-full bg-forest-500" />
                   </div>
-                  <p className="mt-1 text-[10px] text-mist">Baterai 70%</p>
+                  <p className="mt-1 text-[10px] text-muted">Baterai 70%</p>
                 </div>
 
-                <div className="mt-3 rounded-xl border border-alert/40 bg-alert/10 p-4">
-                  <p className="text-[10px] uppercase tracking-wider text-alert">
-                    Terdeteksi
-                  </p>
-                  <p className="mt-1 text-xs text-forest-100">
-                    Objek manusia — perlu konfirmasi
-                  </p>
+                <div className="mt-3 flex items-start gap-2 rounded-xl border border-alert/30 bg-alert/5 p-4">
+                  <TriangleAlert
+                    size={14}
+                    strokeWidth={2}
+                    className="mt-0.5 shrink-0 text-alert"
+                  />
+                  <div>
+                    <p className="text-[10px] font-semibold uppercase tracking-wider text-alert">
+                      Terdeteksi
+                    </p>
+                    <p className="mt-1 text-xs text-ink">
+                      Objek manusia — perlu konfirmasi
+                    </p>
+                  </div>
                 </div>
 
                 <div className="mt-3 grid grid-cols-2 gap-2">
                   {["Return", "Landing", "Hold", "Stop"].map((label) => (
                     <div
                       key={label}
-                      className="rounded-lg border border-forest-700 bg-forest-900/60 py-2 text-center text-[10px] text-mist"
+                      className="rounded-lg border border-line bg-surface py-2 text-center text-[10px] text-muted"
                     >
                       {label}
                     </div>
