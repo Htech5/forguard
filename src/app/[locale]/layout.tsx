@@ -54,7 +54,7 @@ export default async function LocaleLayout({
       lang={locale}
       className={`${manrope.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-forest-950 text-forest-100">
+      <body className="min-h-full flex flex-col bg-background text-ink">
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
