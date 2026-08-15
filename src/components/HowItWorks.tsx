@@ -7,8 +7,8 @@ export async function HowItWorks() {
   const steps = t.raw("steps") as { title: string; description: string }[];
 
   return (
-    <section id="cara-kerja" className="relative bg-background py-24">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="cara-kerja" className="relative bg-background py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <Reveal>
           <SectionHeading
             eyebrow={t("eyebrow")}
