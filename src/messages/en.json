@@ -12,8 +12,7 @@
       "detection": "Detection Tech",
       "charging": "Charging Station",
       "gallery": "Gallery",
-      "roadmap": "Roadmap",
-      "team": "Team"
+      "roadmap": "Roadmap"
     },
     "cta": "Download Paper"
   },
@@ -35,29 +34,81 @@
     "title": "Indonesia's conservation forests are losing their guardians",
     "description": "Illegal logging, poaching, and wildlife trade keep eroding conservation areas — while ground patrols, watchtowers, and satellite imagery can no longer keep pace with vast, cloud-covered tropical terrain.",
     "stats": [
-      { "value": "1M+", "unit": "ha", "label": "Peak primary forest loss recorded in 2016" },
-      { "value": "257,384", "unit": "ha", "label": "National deforestation in 2023" },
-      { "value": "12,612", "unit": "ha", "label": "Occurred within 142 critical conservation areas" },
-      { "value": "35–65", "unit": "cases/yr", "label": "Poaching & wildlife trade cases (2018–2022)" }
+      {
+        "value": "1M+",
+        "unit": "ha",
+        "label": "Peak primary forest loss recorded in 2016"
+      },
+      {
+        "value": "257,384",
+        "unit": "ha",
+        "label": "National deforestation in 2023"
+      },
+      {
+        "value": "12,612",
+        "unit": "ha",
+        "label": "Occurred within 142 critical conservation areas"
+      },
+      {
+        "value": "35–65",
+        "unit": "cases/yr",
+        "label": "Poaching & wildlife trade cases (2018–2022)"
+      }
     ],
     "source": "Source: Global Forest Watch, Auriga Nusantara, Ministry of Environment and Forestry, Goodstats.id — cited in the ForGuard research paper"
   },
   "solution": {
-    "eyebrow": "The Solution",
-    "title": "Three technology pillars of ForGuard",
-    "description": "ForGuard fuses electronic eyes, ears, and a nose into a single autonomous drone that never runs out of power.",
-    "pillars": [
+    "eyebrow": "Specifications",
+    "title": "Built with industrial-grade hardware",
+    "description": "Every component is chosen for long-term autonomous operation in tropical forest terrain — from navigation and detection to long-range communication.",
+    "specs": [
       {
-        "title": "Autonomous Drone",
-        "description": "Flies, maps, and lands on its own with intelligent path planning — minimizing operator intervention across hard-to-reach forest terrain."
+        "title": "Pixhawk Flight Controller",
+        "description": "The navigation brain that handles stabilization, flight paths, and automatic control."
       },
       {
-        "title": "Multi-Parameter Detection",
-        "description": "Cross-verified visual (YOLOv8), acoustic (MFCC + ML), and chemical (CO sniffer) signals reduce false alarms and raise detection reliability."
+        "title": "4× Brushless Motors",
+        "description": "Generate rotor thrust to lift and maneuver the drone efficiently."
       },
       {
-        "title": "PV-PCM Charging Station",
-        "description": "An automatic solar charging station using Phase Change Material — the drone flies continuously with no cables and no operator."
+        "title": "ICR Camera",
+        "description": "Captures day and night imagery adaptively for visual detection in any lighting."
+      },
+      {
+        "title": "Mini Microphone",
+        "description": "Records ambient sound to help identify suspicious activity."
+      },
+      {
+        "title": "Chemical Sniffer",
+        "description": "Detects trace chemical compounds in the air as an indicator of weapon-related illegal activity."
+      },
+      {
+        "title": "360° LiDAR",
+        "description": "Maps distance and detects obstacles around the drone for navigation and flight safety."
+      },
+      {
+        "title": "Gyroscope & Accelerometer",
+        "description": "Measures orientation and acceleration to keep the drone stable and responsive."
+      },
+      {
+        "title": "GPS Module",
+        "description": "Determines the drone's real-time coordinates for navigation and incident logging."
+      },
+      {
+        "title": "Raspberry Pi",
+        "description": "The main processing computer running detection algorithms and sensor data pipelines."
+      },
+      {
+        "title": "ESP32",
+        "description": "A supporting microcontroller for communication and sensor integration status monitoring."
+      },
+      {
+        "title": "LoRa Module",
+        "description": "Sends low-power, long-range status and alert data back to the ranger station."
+      },
+      {
+        "title": "LiPo Battery",
+        "description": "The primary power source supplying the drone's entire system throughout a mission."
       }
     ]
   },
@@ -66,11 +117,26 @@
     "title": "From patrol to follow-up, in one continuous loop",
     "description": "Following ForGuard's full operating mechanism (Appendix 3 of the paper): the drone patrols, detects, reports, then returns to charge itself.",
     "steps": [
-      { "title": "Patrol the Forest Area", "description": "The autonomous drone follows a scheduled route over the conservation area using 3D Jump Point Search path planning." },
-      { "title": "Multi-Parameter Detection", "description": "ICR camera + YOLOv8, an MFCC-based microphone, and a CO chemical sniffer scan simultaneously for signs of illegal activity." },
-      { "title": "Analysis & Verification", "description": "Signals across all three parameters are cross-checked to suppress false positives before an alert is sent." },
-      { "title": "Alert Sent to Rangers", "description": "Data streams in real time via LoRa to the monitoring app — rangers can verify camera and audio evidence and act on it." },
-      { "title": "Autonomous Landing & Charging", "description": "When battery is low, the drone lands itself on the PV-PCM charging pad and recharges before resuming patrol." }
+      {
+        "title": "Patrol the Forest Area",
+        "description": "The autonomous drone follows a scheduled route over the conservation area using 3D Jump Point Search path planning."
+      },
+      {
+        "title": "Multi-Parameter Detection",
+        "description": "ICR camera + YOLOv8, an MFCC-based microphone, and a CO chemical sniffer scan simultaneously for signs of illegal activity."
+      },
+      {
+        "title": "Analysis & Verification",
+        "description": "Signals across all three parameters are cross-checked to suppress false positives before an alert is sent."
+      },
+      {
+        "title": "Alert Sent to Rangers",
+        "description": "Data streams in real time via LoRa to the monitoring app — rangers can verify camera and audio evidence and act on it."
+      },
+      {
+        "title": "Autonomous Landing & Charging",
+        "description": "When battery is low, the drone lands itself on the PV-PCM charging pad and recharges before resuming patrol."
+      }
     ]
   },
   "detection": {
@@ -83,9 +149,18 @@
         "title": "Computer Vision — YOLOv8",
         "description": "An Infrared Cut Filter Removable (ICR) camera enables 24-hour monitoring. YOLOv8 detects humans and weapons in real time, while 1D Synthetic Aperture imaging cuts processing complexity by up to 1/10th compared to 2D methods.",
         "stats": [
-          { "value": "96.1%", "label": "Human detection mAP" },
-          { "value": "92.7%", "label": "Weapon detection accuracy" },
-          { "value": "92–93%", "label": "1D SA imaging accuracy" }
+          {
+            "value": "96.1%",
+            "label": "Human detection mAP"
+          },
+          {
+            "value": "92.7%",
+            "label": "Weapon detection accuracy"
+          },
+          {
+            "value": "92–93%",
+            "label": "1D SA imaging accuracy"
+          }
         ]
       },
       {
@@ -93,8 +168,14 @@
         "title": "Acoustic Early Warning — MFCC",
         "description": "An onboard microphone captures the impulsive signature of gunshots and chainsaw noise. Mel-Frequency Cepstral Coefficients (MFCC) extraction separates genuine gunshots from other impulsive sounds like firecrackers.",
         "stats": [
-          { "value": "Real-time", "label": "Acoustic event classification" },
-          { "value": "MFCC", "label": "Human-perception-based feature extraction" }
+          {
+            "value": "Real-time",
+            "label": "Acoustic event classification"
+          },
+          {
+            "value": "MFCC",
+            "label": "Human-perception-based feature extraction"
+          }
         ]
       },
       {
@@ -102,9 +183,18 @@
         "title": "Chemical Sniffer — CO Residue",
         "description": "A three-electrode electrochemical CO sensor detects gunpowder combustion residue in the air, reinforcing the validity of suspected illegal activity when combined with visual and acoustic detection.",
         "stats": [
-          { "value": "0–1000 ppm", "label": "CO detection range" },
-          { "value": "≤60 seconds", "label": "T90 response time" },
-          { "value": "±5% FS", "label": "Maximum error" }
+          {
+            "value": "0–1000 ppm",
+            "label": "CO detection range"
+          },
+          {
+            "value": "≤60 seconds",
+            "label": "T90 response time"
+          },
+          {
+            "value": "±5% FS",
+            "label": "Maximum error"
+          }
         ]
       }
     ]
@@ -114,20 +204,64 @@
     "title": "An autonomous PV-PCM powered charging station",
     "description": "Battery limits are no longer a bottleneck. ForGuard lands itself, recharges itself, and resumes patrol — powered by solar panels with Phase Change Material technology that keeps panel temperature stable in tropical climates.",
     "features": [
-      { "title": "Autonomous Landing", "description": "A modular 60×60 cm, orientation-independent charging pad — the drone doesn't need to land with precision." },
-      { "title": "Smart Relay Correction", "description": "The microcontroller automatically flips power line polarity if initial charging fails, guaranteeing up to 100% reliability." },
-      { "title": "MPPT Perturb & Observe", "description": "An MPPT algorithm stabilizes solar panel output toward a consistent 12V / 3A reference voltage." }
+      {
+        "title": "Autonomous Landing",
+        "description": "A modular 60×60 cm, orientation-independent charging pad — the drone doesn't need to land with precision."
+      },
+      {
+        "title": "Smart Relay Correction",
+        "description": "The microcontroller automatically flips power line polarity if initial charging fails, guaranteeing up to 100% reliability."
+      },
+      {
+        "title": "MPPT Perturb & Observe",
+        "description": "An MPPT algorithm stabilizes solar panel output toward a consistent 12V / 3A reference voltage."
+      }
     ],
     "stats": [
-      { "value": "2,126.29 W", "label": "Total PV-PCM output (clear weather)" },
-      { "value": "+38.3%", "label": "Higher than a standard PV panel" },
-      { "value": ">20°C", "label": "Panel temperature drop at peak conditions" }
+      {
+        "value": "2,126.29 W",
+        "label": "Total PV-PCM output (clear weather)"
+      },
+      {
+        "value": "+38.3%",
+        "label": "Higher than a standard PV panel"
+      },
+      {
+        "value": ">20°C",
+        "label": "Panel temperature drop at peak conditions"
+      }
     ]
   },
   "gallery": {
     "eyebrow": "Product Design",
     "title": "ForGuard 3D Design",
-    "description": "Concept renders of the drone and charging station, engineered for long-term autonomous operation in tropical forest environments."
+    "description": "Concept renders of the drone and charging station, engineered for long-term autonomous operation in tropical forest environments.",
+    "items": [
+      {
+        "label": "Isometric",
+        "title": "Drone and charging station in one deployment unit"
+      },
+      {
+        "label": "Airframe",
+        "title": "Top view of the quad-rotor frame"
+      },
+      {
+        "label": "Full System",
+        "title": "Side profile of the complete ForGuard unit"
+      },
+      {
+        "label": "PV-PCM",
+        "title": "Solar panel side with phase-change cooling"
+      },
+      {
+        "label": "Sensors",
+        "title": "Front view of the sniffer sensor bay"
+      },
+      {
+        "label": "Station",
+        "title": "Charging station component detail"
+      }
+    ]
   },
   "appPreview": {
     "eyebrow": "Ranger App",
@@ -140,20 +274,26 @@
     "title": "From lab research to a nationwide monitoring network",
     "description": "ForGuard's development follows four stages, from lab-scale technical validation to integration with the Ministry of Environment and Forestry's Sipongi command center.",
     "stages": [
-      { "period": "2026 · H1", "title": "Research & Prototyping", "description": "AI algorithm development, sniffer sensor integration, and lab testing of PV-PCM efficiency. Target: TRL 4." },
-      { "period": "2026 · H2", "title": "Limited Field Trial", "description": "Deployment in an educational forest / campus area with forest-like topography (1–2 hectares) to validate weather resilience." },
-      { "period": "2027", "title": "Pilot Project", "description": "Partnership with a National Park authority for patrol coverage of one high-risk forest resort sector." },
-      { "period": "2028 onward", "title": "Scaling & Integration", "description": "Mass production of charging stations and data integration with the Ministry's Sipongi command center across priority national parks." }
-    ]
-  },
-  "team": {
-    "eyebrow": "Development Team",
-    "title": "Team Burpunice",
-    "description": "Developed by engineering students at Universitas Diponegoro, Semarang, Indonesia.",
-    "members": [
-      { "name": "Habib Mukhlis Triatmojo", "role": "Student ID 21120124130081" },
-      { "name": "Aqyal Ghana Zein", "role": "Student ID 21060124130088" },
-      { "name": "Muhammad Faris Revansyah", "role": "Student ID 21120124130103" }
+      {
+        "period": "2026 · H1",
+        "title": "Research & Prototyping",
+        "description": "AI algorithm development, sniffer sensor integration, and lab testing of PV-PCM efficiency. Target: TRL 4."
+      },
+      {
+        "period": "2026 · H2",
+        "title": "Limited Field Trial",
+        "description": "Deployment in an educational forest / campus area with forest-like topography (1–2 hectares) to validate weather resilience."
+      },
+      {
+        "period": "2027",
+        "title": "Pilot Project",
+        "description": "Partnership with a National Park authority for patrol coverage of one high-risk forest resort sector."
+      },
+      {
+        "period": "2028 onward",
+        "title": "Scaling & Integration",
+        "description": "Mass production of charging stations and data integration with the Ministry's Sipongi command center across priority national parks."
+      }
     ]
   },
   "cta": {
@@ -166,7 +306,13 @@
   "footer": {
     "tagline": "An autonomous drone system for conservation forest surveillance.",
     "rights": "Team Burpunice — Universitas Diponegoro.",
-    "sourceNote": "All technical data and claims reference the ForGuard research paper, 2026."
+    "sourceNote": "All technical data and claims reference the ForGuard research paper, 2026.",
+    "navHeading": "Navigation",
+    "contactHeading": "Contact",
+    "paperLink": "Research Paper (PDF)",
+    "institution": "Universitas Diponegoro",
+    "location": "Semarang, Central Java, Indonesia",
+    "backToTop": "Back to top"
   },
   "langSwitcher": {
     "id": "ID",
