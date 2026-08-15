@@ -10,10 +10,9 @@ const LINK_DEFS = [
   ["charging", "#charging"],
   ["gallery", "#galeri"],
   ["roadmap", "#roadmap"],
-  ["team", "#tim"],
 ] as const;
 
-const MOBILE_KEYS = ["home", "problem", "solution", "detection", "charging", "team"] as const;
+const MOBILE_KEYS = ["home", "problem", "solution", "detection", "charging", "gallery"] as const;
 
 export async function Navbar() {
   const t = await getTranslations("nav");
@@ -30,7 +29,7 @@ export async function Navbar() {
     solution: t("links.solution"),
     detection: t("links.detection"),
     charging: t("links.charging"),
-    team: t("links.team"),
+    gallery: t("links.gallery"),
   };
 
   const mobileItems = MOBILE_KEYS.map((key) => ({
