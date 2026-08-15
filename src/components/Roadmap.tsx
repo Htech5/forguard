@@ -7,8 +7,8 @@ export async function Roadmap() {
   const stages = t.raw("stages") as { period: string; title: string; description: string }[];
 
   return (
-    <section id="roadmap" className="relative bg-forest-50 py-24">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="roadmap" className="relative bg-forest-50 py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <Reveal>
           <SectionHeading eyebrow={t("eyebrow")} title={t("title")} description={t("description")} />
         </Reveal>
