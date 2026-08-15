@@ -7,8 +7,8 @@ export async function ProblemStats() {
   const stats = t.raw("stats") as { value: string; unit: string; label: string }[];
 
   return (
-    <section id="masalah" className="relative bg-background py-24">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="masalah" className="relative bg-background py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <Reveal>
           <SectionHeading
             eyebrow={t("eyebrow")}
