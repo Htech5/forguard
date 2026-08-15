@@ -10,7 +10,6 @@ import { ChargingStation } from "@/components/ChargingStation";
 import { Gallery } from "@/components/Gallery";
 import { AppPreview } from "@/components/AppPreview";
 import { Roadmap } from "@/components/Roadmap";
-import { Team } from "@/components/Team";
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
 
@@ -36,7 +35,6 @@ export default async function Home({
         <Gallery />
         <AppPreview />
         <Roadmap />
-        <Team />
         <CTASection />
       </main>
       <Footer />
