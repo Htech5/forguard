@@ -1,0 +1,12 @@
+/* Initial (pre-animation) state — GSAP drives the growth from here. */
+.treeline-stem {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.treeline-leaf {
+  transform: scale(0);
+  /* fill-box + left-middle == the leaf's attachment point on the stem */
+  transform-box: fill-box;
+  transform-origin: 0% 50%;
+}
