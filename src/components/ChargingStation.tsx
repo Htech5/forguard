@@ -12,8 +12,8 @@ export async function ChargingStation() {
   const stats = t.raw("stats") as { value: string; label: string }[];
 
   return (
-    <section id="charging" className="relative bg-background py-24">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="charging" className="relative bg-background py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
           <div>
             <Reveal>
