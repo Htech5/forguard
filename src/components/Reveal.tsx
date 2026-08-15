@@ -30,7 +30,8 @@ export function Reveal({
         scrollTrigger: {
           trigger: ref.current,
           start: "top 88%",
-          once: true,
+          // replay on the way down, rewind on the way back up
+          toggleActions: "play none none reverse",
         },
       });
     },
