@@ -4,6 +4,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { SmoothScroll } from "@/components/SmoothScroll";
 import "../globals.css";
 
 const manrope = Manrope({
@@ -55,6 +56,7 @@ export default async function LocaleLayout({
       className={`${manrope.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-ink">
+        <SmoothScroll />
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
