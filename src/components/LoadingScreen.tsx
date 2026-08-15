@@ -5,6 +5,8 @@ import { Drone } from "lucide-react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "@/lib/gsap";
 
+export const LOADER_DONE_EVENT = "forguard:loaded";
+
 export function LoadingScreen({
   brand,
   tagline,
@@ -13,6 +15,12 @@ export function LoadingScreen({
   tagline: string;
 }) {
   const [done, setDone] = useState(false);
+
+  // Sections hidden behind the loader wait for this before animating in.
+  const finish = () => {
+    setDone(true);
+    window.dispatchEvent(new Event(LOADER_DONE_EVENT));
+  };
   const rootRef = useRef<HTMLDivElement>(null);
   const droneRef = useRef<SVGSVGElement>(null);
   const sweepRef = useRef<HTMLDivElement>(null);
@@ -31,7 +39,7 @@ export function LoadingScreen({
             opacity: 0,
             duration: 0.5,
             ease: "power1.inOut",
-            onComplete: () => setDone(true),
+            onComplete: finish,
           });
         },
       });
@@ -72,7 +80,7 @@ export function LoadingScreen({
   // Safety net: never let the loading screen block the site if animations
   // don't run (e.g. reduced-motion edge cases or a stalled tick source).
   useEffect(() => {
-    const fallback = setTimeout(() => setDone(true), 4000);
+    const fallback = setTimeout(finish, 4000);
     return () => clearTimeout(fallback);
   }, []);
 
