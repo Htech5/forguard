@@ -57,19 +57,19 @@ export function Hero() {
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,var(--line)_1px,transparent_1px),linear-gradient(to_bottom,var(--line)_1px,transparent_1px)] bg-size-[64px_64px] opacity-40"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,var(--forest-300)_1.5px,transparent_1.5px),linear-gradient(to_bottom,var(--forest-300)_1.5px,transparent_1.5px)] bg-size-[48px_48px] opacity-60"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-full [background:radial-gradient(120%_60%_at_50%_0%,transparent_0%,var(--forest-50)_75%)]"
+        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-full [background:radial-gradient(130%_70%_at_50%_0%,transparent_0%,var(--forest-50)_88%)]"
       />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pb-20 pt-28 md:pt-36">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 pb-16 pt-24 sm:px-6 sm:pb-20 md:pt-36">
         <div className="text-center">
           <a
             ref={badgeRef}
             href="#deteksi"
-            className="group mx-auto inline-flex items-center gap-3 rounded-full border border-line bg-surface py-1 pl-4 pr-1 text-sm shadow-sm transition-colors hover:border-forest-400"
+            className="group mx-auto inline-flex items-center gap-2 rounded-full border border-line bg-surface py-1 pl-3 pr-1 text-xs shadow-sm transition-colors hover:border-forest-400 sm:gap-3 sm:pl-4 sm:text-sm"
           >
             <span className="text-ink">{t("badge")}</span>
             <span className="flex size-6 items-center justify-center overflow-hidden rounded-full bg-forest-100 text-forest-700">
@@ -83,32 +83,32 @@ export function Hero() {
 
           <h1
             ref={headingRef}
-            className="mx-auto mt-8 max-w-4xl font-display text-5xl font-bold leading-[1.08] text-balance text-ink md:text-6xl lg:text-7xl"
+            className="mx-auto mt-6 max-w-4xl font-display text-[2.125rem] font-bold leading-[1.1] text-balance text-ink sm:mt-8 sm:text-5xl md:text-6xl lg:text-7xl"
           >
             {t("title")}
           </h1>
 
           <p
             ref={subtitleRef}
-            className="mx-auto mt-8 max-w-2xl text-balance text-lg leading-relaxed text-muted"
+            className="mx-auto mt-5 max-w-2xl text-balance text-base leading-relaxed text-muted sm:mt-8 sm:text-lg"
           >
             {t("subtitle")}
           </p>
 
           <div
             ref={ctaRef}
-            className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
+            className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:mt-10 sm:flex-row sm:items-center"
           >
             <a
               href="#unduh"
-              className="inline-flex items-center gap-2 rounded-full bg-forest-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-forest-700"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-forest-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-forest-700"
             >
               <Download size={16} strokeWidth={2.25} />
               {t("ctaPrimary")}
             </a>
             <a
               href="#cara-kerja"
-              className="inline-flex items-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-semibold text-ink transition-colors hover:border-forest-400 hover:text-forest-700"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-semibold text-ink transition-colors hover:border-forest-400 hover:text-forest-700"
             >
               {t("ctaSecondary")}
               <ArrowRight size={16} strokeWidth={2.25} />
@@ -116,7 +116,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div ref={showcaseRef} className="relative mt-16 md:mt-20">
+        <div ref={showcaseRef} className="relative mt-12 md:mt-20">
           <div className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl border border-line bg-surface p-3 shadow-xl shadow-forest-900/5 ring-1 ring-forest-900/5">
             <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-forest-50">
               <Image
@@ -124,7 +124,7 @@ export function Hero() {
                 alt="ForGuard drone 3D render"
                 fill
                 priority
-                className="object-contain p-8"
+                className="object-contain p-4 sm:p-8"
               />
             </div>
           </div>
@@ -135,7 +135,7 @@ export function Hero() {
         </div>
       </div>
 
-      <ForestTreeline className="pointer-events-none absolute inset-x-0 bottom-0 h-14 w-full opacity-80 sm:h-20" />
+      <ForestTreeline className="pointer-events-none absolute inset-x-0 bottom-0 w-full" />
     </section>
   );
 }
