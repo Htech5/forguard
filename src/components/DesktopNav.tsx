@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Radar } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { LangSwitcher } from "./LangSwitcher";
+import { useActiveSection } from "@/lib/useActiveSection";
 
 type NavLink = { key: string; href: string; label: string };
 
@@ -17,6 +18,7 @@ export function DesktopNav({
   links: NavLink[];
 }) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const active = useActiveSection(links.map((l) => l.href.slice(1)));
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 40);
@@ -42,17 +44,29 @@ export function DesktopNav({
           {brand}
         </Link>
 
-        <ul className="flex items-center gap-5 text-sm text-muted xl:gap-6">
-          {links.map((link) => (
-            <li key={link.key}>
-              <a
-                href={link.href}
-                className="transition-colors hover:text-forest-700"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+        <ul className="flex items-center gap-5 text-sm xl:gap-6">
+          {links.map((link) => {
+            const isActive = active === link.href.slice(1);
+            return (
+              <li key={link.key}>
+                <a
+                  href={link.href}
+                  className={`relative pb-1 transition-colors ${
+                    isActive
+                      ? "font-semibold text-forest-700"
+                      : "text-muted hover:text-forest-700"
+                  }`}
+                >
+                  {link.label}
+                  <span
+                    className={`absolute inset-x-0 -bottom-0.5 h-0.5 rounded-full bg-forest-600 transition-opacity ${
+                      isActive ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="flex shrink-0 items-center gap-3">
