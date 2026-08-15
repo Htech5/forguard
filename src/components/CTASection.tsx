@@ -9,8 +9,8 @@ export async function CTASection() {
   const t = await getTranslations("cta");
 
   return (
-    <section id="unduh" className="relative bg-forest-50 py-24">
-      <div className="mx-auto max-w-4xl px-6 text-center">
+    <section id="unduh" className="relative bg-forest-50 py-16 sm:py-24">
+      <div className="mx-auto max-w-4xl px-5 text-center sm:px-6">
         <Reveal>
           <p className="text-sm font-semibold uppercase tracking-[0.14em] text-forest-600">
             {t("eyebrow")}
