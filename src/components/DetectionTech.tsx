@@ -37,8 +37,8 @@ export function DetectionTech() {
   );
 
   return (
-    <section id="deteksi" className="relative bg-forest-50 py-24">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="deteksi" className="relative bg-forest-50 py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <Reveal>
           <SectionHeading
             eyebrow={t("eyebrow")}
